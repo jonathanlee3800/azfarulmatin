@@ -27,13 +27,19 @@ function NavComponent() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <Link to="/">Home</Link>
+            <Link to="/" style={{ marginRight: "8px" }}>
+              Home
+            </Link>
           </NavItem>
           <NavItem>
-            <Link to="/About/">About</Link>
+            <Link to="/About/" style={{ marginRight: "8px" }}>
+              About
+            </Link>
           </NavItem>
           <NavItem>
-            <Link to="/components/">Components</Link>
+            <Link to="/components/" style={{ marginRight: "8px" }}>
+              Components
+            </Link>
           </NavItem>
         </Nav>
         <NavbarText>Simple Text</NavbarText>
