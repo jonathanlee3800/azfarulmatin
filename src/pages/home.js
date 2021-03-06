@@ -10,14 +10,6 @@ const Jumbotron1 = styled(Jumbotron)`
   background: transparent;
   background-image: url(${homepage1});
   background-repeat: no-repeat;
-  @media not all and (min-resolution: 0.001dpcm) {
-    @media {
-      .safari10 {
-        background-attachment: scroll;
-      }
-    }
-  }
-  background-attachment: fixed;
   background-size: cover;
   height: 90vh;
   background-position: center;
@@ -34,7 +26,7 @@ function Home() {
       <Row>
         <Col md="0" xl="3"></Col>
         <Col md="12" xl="6">
-          Jonleegod is a self taught urban photographer based in Singapore. Only
+          Jonleegod1 is a self taught urban photographer based in Singapore. Only
           at the age of 23, Yik Keat has accumulated a following of 240,000
           individuals on Instagram, where most of his work can be found. He is
           known for telling stories out of the ordinary, daily life and has a
