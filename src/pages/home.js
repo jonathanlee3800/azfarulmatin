@@ -10,7 +10,6 @@ const Jumbotron1 = styled(Jumbotron)`
   background: transparent;
   background-image: url(${homepage1});
   background-repeat: no-repeat;
-  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
