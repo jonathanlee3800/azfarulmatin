@@ -19,16 +19,16 @@ import {
   Button,
 } from "reactstrap";
 
-import { ShowcaseData } from "../data/showcaseData";
+// import { ShowcaseData } from "../data/showcaseData";
 function Showcase() {
   console.log("LOOOOL");
   let id = useParams();
-  let showcase = ShowcaseData.find((data) => data.showcaseName === id.id);
+  //   let showcase = ShowcaseData.find((data) => data.showcaseName === id.id);
 
   return (
     <Container fluid>
       <Row>
-        {showcase.pictures.map((picture) => (
+        {/* {showcase.pictures.map((picture) => (
           <Col sm="12" xl="4">
             <Card>
               <CardImg
@@ -40,7 +40,7 @@ function Showcase() {
               />
             </Card>
           </Col>
-        ))}
+        ))} */}
       </Row>
     </Container>
   );
