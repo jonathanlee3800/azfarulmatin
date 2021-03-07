@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "reactstrap";
 import { CategoryData } from "../data/categories";
 import homepage1 from "../assets/images/category/animal.jpg";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import {
   Card,
   CardImg,
@@ -42,7 +43,11 @@ function CatBox() {
               <CardBody>
                 <CardTitle tag="h5">{category.category}</CardTitle>
 
-                <Button>View All</Button>
+                <Button>
+                  <Link to={`/category/${category.category.toLowerCase()}`}>
+                    View All
+                  </Link>
+                </Button>
               </CardBody>
             </Card>
           </Col>

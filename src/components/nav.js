@@ -32,8 +32,8 @@ function NavComponent() {
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/About/" style={{ marginRight: "8px" }}>
-              About
+            <Link to="/category/animals" style={{ marginRight: "8px" }}>
+              Animals
             </Link>
           </NavItem>
           <NavItem>

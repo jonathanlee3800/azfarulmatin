@@ -5,7 +5,7 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NavComponent from "../src/components/nav";
 import Footer from "../src/components/footer";
 import Home from "../src/pages/home";
-
+import Showcase from "../src/pages/showcase"
 function App() {
   return (
     <Router>
@@ -15,6 +15,7 @@ function App() {
            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/category/:id"  component={Showcase} />
         </Switch>
       </div>
       <Footer></Footer>

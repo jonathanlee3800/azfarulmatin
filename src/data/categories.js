@@ -15,7 +15,7 @@ export const CategoryData = [
     picture: cityscape,
   },
   {
-    category: "Daily Scenes",
+    category: "Daily-Scenes",
     picture: daily,
   },
   {
@@ -23,7 +23,7 @@ export const CategoryData = [
     picture: exhibition,
   },
   {
-    category: "Potraits",
+    category: "Portraits",
     picture: portrait,
   },
   {
