@@ -1,5 +1,5 @@
 // import { Container, Row, Col } from 'reactstrap';
-import { React, useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "reactstrap";
 import {
@@ -18,20 +18,54 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import { storage } from "../firebase";
 
-// import { ShowcaseData } from "../data/showcaseData";
 function Showcase() {
-  console.log("LOOOOL");
-  let id = useParams();
-  //   let showcase = ShowcaseData.find((data) => data.showcaseName === id.id);
+  let { id } = useParams();
+  const [allImages, setAllimages] = useState([]);
+
+  const setloaded = () => {
+    console.log("loaded");
+  };
+
+  useEffect(async () => {
+    console.log("LOOOOL");
+    let count = 1;
+    const placeholder = [];
+    const response = await storage.ref(id).listAll();
+
+    // const allURl = response.items.map(async (url) => {
+    //   console.log("before");
+    //   const res1 = await url.getDownloadURL();
+    //   console.log((count = count + 1));
+    //   return res1;
+    // });
+    // console.log(allURl);
+    // for (let item of response.items) {
+    //   console.log("before");
+    //   const res1 = await item.getDownloadURL();
+    //   console.log((count = count + 1));
+    //   placeholder.push(res1);
+    // }
+    // console.log(placeholder);
+    // console.log("middle");
+    const allImages = await Promise.all(
+      response.items.map(async (url) => {
+        return await url.getDownloadURL();
+      })
+    );
+    setAllimages(allImages);
+    // console.log(allURl);
+  }, []);
 
   return (
     <Container fluid>
       <Row>
-        {/* {showcase.pictures.map((picture) => (
+        {allImages.map((picture) => (
           <Col sm="12" xl="4">
             <Card>
               <CardImg
+                onLoad={setloaded()}
                 style={{ backgroundAttachment: "cover" }}
                 top
                 width="60%"
@@ -40,7 +74,7 @@ function Showcase() {
               />
             </Card>
           </Col>
-        ))} */}
+        ))}
       </Row>
     </Container>
   );
