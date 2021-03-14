@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import {
   Collapse,
@@ -15,7 +16,18 @@ import {
   NavbarText,
 } from "reactstrap";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 function NavComponent() {
+  const StyledLink = styled(Link)`
+    color: black;
+    text-decoration: none;
+    background: transparent;
+    &:hover {
+      text-decoration: none;
+      color: black;
+      border-bottom: 1px solid black;
+    }
+  `;
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -27,22 +39,51 @@ function NavComponent() {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <Link to="/" style={{ marginRight: "8px" }}>
+            <StyledLink to="/" style={{ marginRight: "8px" }}>
               Home
-            </Link>
+            </StyledLink>
           </NavItem>
           <NavItem>
-            <Link to="/category/animals" style={{ marginRight: "8px" }}>
+            <StyledLink to="/category/animals" style={{ marginRight: "8px" }}>
               Animals
-            </Link>
+            </StyledLink>
           </NavItem>
           <NavItem>
-            <Link to="/components/" style={{ marginRight: "8px" }}>
-              Components
-            </Link>
+            <StyledLink
+              to="/category/cityscapes"
+              style={{ marginRight: "8px" }}
+            >
+              Cityscapes
+            </StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink
+              to="/category/daily-scenes"
+              style={{ marginRight: "8px" }}
+            >
+              Daily-Scenes
+            </StyledLink>
+          </NavItem>
+          <NavItem>
+            <StyledLink
+              to="/category/exhibitions"
+              style={{ marginRight: "8px" }}
+            >
+              Exhibitions
+            </StyledLink>
+          </NavItem>{" "}
+          <NavItem>
+            <StyledLink to="/category/portraits" style={{ marginRight: "8px" }}>
+              Portraits
+            </StyledLink>
+          </NavItem>{" "}
+          <NavItem>
+            <StyledLink to="/category/sports" style={{ marginRight: "8px" }}>
+              Sports
+            </StyledLink>
           </NavItem>
         </Nav>
-        <NavbarText>Simple Text</NavbarText>
+        <NavbarText>Photographer.</NavbarText>
         {/* </Collapse> */}
       </Collapse>
     </Navbar>

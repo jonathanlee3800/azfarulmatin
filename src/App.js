@@ -1,12 +1,14 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NavComponent from "../src/components/nav";
 import Footer from "../src/components/footer";
 import Home from "../src/pages/home";
-import Showcase from "../src/pages/showcase"
+import Showcase from "../src/pages/showcase";
 function App() {
+  useEffect(() => {
+  }, []);
   return (
     <Router>
       <NavComponent></NavComponent>
@@ -15,7 +17,7 @@ function App() {
            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/category/:id"  component={Showcase} />
+          <Route path="/category/:id" component={Showcase} />
         </Switch>
       </div>
       <Footer></Footer>

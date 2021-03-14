@@ -4,6 +4,8 @@ import React from "react";
 import { Jumbotron, Button, Nav } from "reactstrap";
 import styled from "styled-components";
 import { Container, Row, Col } from "reactstrap";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-typewriting-effect";
 
 import CatBox from "../components/categorybox";
 const Jumbotron1 = styled(Jumbotron)`
@@ -26,28 +28,24 @@ function Home() {
       <Row>
         <Col md="0" xl="3"></Col>
         <Col md="12" xl="6">
-          Jonleegod1 is a self taught urban photographer based in Singapore. Only
-          at the age of 23, Yik Keat has accumulated a following of 240,000
-          individuals on Instagram, where most of his work can be found. He is
-          known for telling stories out of the ordinary, daily life and has a
-          unique set of colours. Yik Keat puts in immense effort in crafting
-          every piece of visual and hopes to convey a certain kind of emotion to
-          every audience out there.
+          Azfarul is a photographer bro. What more u want? 90% of my pics on
+          instagram is taken by him steady fella
         </Col>
         <Col md="0" xl="3"></Col>
       </Row>
       <Row>
-        <Col md="0" xl="3"></Col>
-        <Col md="12" xl="6">
-          Yik Keat is a self taught urban photographer based in Singapore. Only
-          at the age of 23, Yik Keat has accumulated a following of 240,000
-          individuals on Instagram, where most of his work can be found. He is
-          known for telling stories out of the ordinary, daily life and has a
-          unique set of colours. Yik Keat puts in immense effort in crafting
-          every piece of visual and hopes to convey a certain kind of emotion to
-          every audience out there.
+        <Col md="12" xl="12">
+          <Jumbotron style={{ textAlign: "center", backgroundColor: "white" }}>
+            <h1>
+              <Typewriter
+                string="Photo Categories"
+                delay={100}
+                cursor="_"
+                stopBlinkinOnComplete
+              />
+            </h1>
+          </Jumbotron>
         </Col>
-        <Col md="0" xl="3"></Col>
       </Row>
 
       <CatBox></CatBox>

@@ -25,37 +25,45 @@ function Showcase() {
   const [allImages, setAllimages] = useState([]);
 
   const setloaded = () => {
-    console.log("loaded");
+    window.scrollTo(0, 0);
   };
 
   useEffect(async () => {
-    console.log("LOOOOL");
+    console.log(localStorage.getItem("mydata"));
     let count = 1;
     const placeholder = [];
-    const response = await storage.ref(id).listAll();
+    if (localStorage.getItem(id) === null) {
+      const response = await storage.ref(id).listAll();
 
-    // const allURl = response.items.map(async (url) => {
-    //   console.log("before");
-    //   const res1 = await url.getDownloadURL();
-    //   console.log((count = count + 1));
-    //   return res1;
-    // });
-    // console.log(allURl);
-    // for (let item of response.items) {
-    //   console.log("before");
-    //   const res1 = await item.getDownloadURL();
-    //   console.log((count = count + 1));
-    //   placeholder.push(res1);
-    // }
-    // console.log(placeholder);
-    // console.log("middle");
-    const allImages = await Promise.all(
-      response.items.map(async (url) => {
-        return await url.getDownloadURL();
-      })
-    );
-    setAllimages(allImages);
-    // console.log(allURl);
+      // const allURl = response.items.map(async (url) => {
+      //   console.log("before");
+      //   const res1 = await url.getDownloadURL();
+      //   console.log((count = count + 1));
+      //   return res1;
+      // });
+      // console.log(allURl);
+      // for (let item of response.items) {
+      //   console.log("before");
+      //   const res1 = await item.getDownloadURL();
+      //   console.log((count = count + 1));
+      //   placeholder.push(res1);
+      // }
+      // console.log(placeholder);
+      // console.log("middle");
+
+      const allImages = await Promise.all(
+        response.items.map(async (url) => {
+          console.log("fetching data");
+          return await url.getDownloadURL();
+        })
+      );
+      localStorage.setItem(id, JSON.stringify(allImages));
+      setAllimages(JSON.parse(localStorage.getItem(id)));
+      console.log(JSON.parse(localStorage.getItem(id)), "nullbro");
+    } else {
+      setAllimages(JSON.parse(localStorage.getItem(id)));
+      console.log(JSON.parse(localStorage.getItem(id)), "not null");
+    }
   }, []);
 
   return (

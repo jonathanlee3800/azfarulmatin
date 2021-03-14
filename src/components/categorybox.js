@@ -13,18 +13,21 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+import FancyButton from "./fancybutton";
 
-// const Footer =  styled.div`
+import { motion } from "framer-motion";
+import Fade from "react-reveal/Fade";
 
-// left: 0;
-// bottom: 0;
-// width: 100%;
-// margin-left:1vw;
-// `
+// const styledLink = styled.Link`
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   margin-left: 1vw;
+// `;
 // const ListInlineItem1 =  styled(ListInlineItem)`
 // border-bottom:1px solid black;
 
-// `
+// // `
 function CatBox() {
   useEffect(() => {
     console.log({ CategoryData });
@@ -33,24 +36,30 @@ function CatBox() {
     <Container className="themed-container" fluid="lg">
       <Row>
         {CategoryData.map((category) => (
-          <Col md="6" xl="6">
-            <Card>
-              <CardImg
-                top
-                width="60%"
-                src={category.picture}
-                alt="Card image cap"
-              />
-              <CardBody>
-                <CardTitle tag="h5">{category.category}</CardTitle>
+          <Col xs="12" lg="6">
+            <Fade left big>
+              <Card>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ duration: 0.1 }}
+                >
+                  <CardImg
+                    top
+                    width="60%"
+                    src={category.picture}
+                    alt="Card image cap"
+                  />
+                </motion.div>
+                <CardBody>
+                  <CardTitle tag="h5">{category.category}</CardTitle>
 
-                <Button>
-                  <Link to={`/category/${category.category.toLowerCase()}`}>
-                    View All
-                  </Link>
-                </Button>
-              </CardBody>
-            </Card>
+                  <FancyButton
+                    category={category.category.toLowerCase()}
+                  ></FancyButton>
+                </CardBody>
+              </Card>
+            </Fade>
           </Col>
         ))}
       </Row>
