@@ -64,7 +64,7 @@ function Showcase() {
       setAllimages(JSON.parse(localStorage.getItem(id)));
       console.log(JSON.parse(localStorage.getItem(id)), "not null");
     }
-  }, []);
+  }, [id]);
 
   return (
     <Container fluid>
