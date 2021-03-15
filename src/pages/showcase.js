@@ -18,15 +18,13 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
+
 import { storage } from "../firebase";
+import ShowcaseCard from "../components/showcasecard";
 
 function Showcase() {
   let { id } = useParams();
   const [allImages, setAllimages] = useState([]);
-
-  const setloaded = () => {
-    window.scrollTo(0, 0);
-  };
 
   useEffect(async () => {
     console.log(localStorage.getItem("mydata"));
@@ -34,23 +32,6 @@ function Showcase() {
     const placeholder = [];
     if (localStorage.getItem(id) === null) {
       const response = await storage.ref(id).listAll();
-
-      // const allURl = response.items.map(async (url) => {
-      //   console.log("before");
-      //   const res1 = await url.getDownloadURL();
-      //   console.log((count = count + 1));
-      //   return res1;
-      // });
-      // console.log(allURl);
-      // for (let item of response.items) {
-      //   console.log("before");
-      //   const res1 = await item.getDownloadURL();
-      //   console.log((count = count + 1));
-      //   placeholder.push(res1);
-      // }
-      // console.log(placeholder);
-      // console.log("middle");
-
       const allImages = await Promise.all(
         response.items.map(async (url) => {
           console.log("fetching data");
@@ -71,16 +52,7 @@ function Showcase() {
       <Row>
         {allImages.map((picture) => (
           <Col sm="12" xl="4">
-            <Card>
-              <CardImg
-                onLoad={setloaded()}
-                style={{ backgroundAttachment: "cover" }}
-                top
-                width="60%"
-                src={picture}
-                alt="Card image cap"
-              />
-            </Card>
+            <ShowcaseCard picture={picture}></ShowcaseCard>
           </Col>
         ))}
       </Row>
