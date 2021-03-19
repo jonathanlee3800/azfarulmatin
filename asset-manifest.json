@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/azfarulmatin/static/css/main.953c4905.chunk.css",
-    "main.js": "/azfarulmatin/static/js/main.26fde3f5.chunk.js",
-    "main.js.map": "/azfarulmatin/static/js/main.26fde3f5.chunk.js.map",
+    "main.js": "/azfarulmatin/static/js/main.d23f5919.chunk.js",
+    "main.js.map": "/azfarulmatin/static/js/main.d23f5919.chunk.js.map",
     "runtime-main.js": "/azfarulmatin/static/js/runtime-main.2fb4d10c.js",
     "runtime-main.js.map": "/azfarulmatin/static/js/runtime-main.2fb4d10c.js.map",
     "static/css/2.fabbef47.chunk.css": "/azfarulmatin/static/css/2.fabbef47.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.47f59dca.chunk.js",
     "static/css/main.953c4905.chunk.css",
-    "static/js/main.26fde3f5.chunk.js"
+    "static/js/main.d23f5919.chunk.js"
   ]
 }
