@@ -17,7 +17,7 @@ function NavComponent() {
       <List type="inline">
         <ListInlineItem1>
           <a
-            href="https://www.linkedin.com/in/jonathan-lee-905152174/"
+            href="https://www.linkedin.com/in/azfarul-matin-b73880165/"
             style={{ textDecoration: "none", color: "black" }}
           >
             Linkedin
@@ -33,7 +33,7 @@ function NavComponent() {
         </ListInlineItem1>
         <ListInlineItem1>
           <a
-            href="mailto:jonathanlee543211@gmail.com"
+            href="mailto:azfarulmatin@gmail.com"
             style={{ textDecoration: "none", color: "black" }}
           >
             Email
