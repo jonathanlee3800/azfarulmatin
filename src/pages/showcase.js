@@ -9,15 +9,6 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-} from "reactstrap";
 
 import { storage } from "../firebase";
 import ShowcaseCard from "../components/showcasecard";
