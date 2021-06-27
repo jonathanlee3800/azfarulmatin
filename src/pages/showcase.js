@@ -16,37 +16,46 @@ import ShowcaseCard from "../components/showcasecard";
 function Showcase() {
   let { id } = useParams();
   const [allImages, setAllimages] = useState([]);
-
+  const [error, setError] = useState(false);
   useEffect(async () => {
-    console.log(localStorage.getItem("mydata"));
-    let count = 1;
-    const placeholder = [];
-    if (localStorage.getItem(id) === null) {
-      const response = await storage.ref(id).listAll();
-      const allImages = await Promise.all(
-        response.items.map(async (url) => {
-          console.log("fetching data");
-          return await url.getDownloadURL();
-        })
-      );
-      localStorage.setItem(id, JSON.stringify(allImages));
-      setAllimages(JSON.parse(localStorage.getItem(id)));
-      console.log(JSON.parse(localStorage.getItem(id)), "nullbro");
-    } else {
-      setAllimages(JSON.parse(localStorage.getItem(id)));
-      console.log(JSON.parse(localStorage.getItem(id)), "not null");
+    try {
+      console.log(error, "ERROR STATE");
+      console.log(localStorage.getItem("mydata"));
+      let count = 1;
+      const placeholder = [];
+      if (localStorage.getItem(id) === null) {
+        const response = await storage.ref(id).listAll();
+        const allImages = await Promise.all(
+          response.items.map(async (url) => {
+            console.log("fetching data");
+            return await url.getDownloadURL();
+          })
+        );
+        localStorage.setItem(id, JSON.stringify(allImages));
+        setAllimages(JSON.parse(localStorage.getItem(id)));
+        console.log(JSON.parse(localStorage.getItem(id)), "nullbro");
+      } else {
+        setAllimages(JSON.parse(localStorage.getItem(id)));
+        console.log(JSON.parse(localStorage.getItem(id)), "not null");
+      }
+    } catch (error) {
+      setError(true);
     }
   }, [id]);
 
   return (
     <Container fluid>
-      <Row>
-        {allImages.map((picture) => (
-          <Col sm="12" xl="4">
-            <ShowcaseCard picture={picture}></ShowcaseCard>
-          </Col>
-        ))}
-      </Row>
+      {!error ? (
+        <Row>
+          {allImages.map((picture) => (
+            <Col sm="12" xl="4">
+              <ShowcaseCard picture={picture}></ShowcaseCard>
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <p>Data Limit reached sorry :(</p>
+      )}
     </Container>
   );
 }

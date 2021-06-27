@@ -40,7 +40,7 @@ function NavComponent() {
           </a>
         </ListInlineItem1>
         <ListInlineItem>
-          Developed By
+          Developed By :
           <a
             href="https://www.instagram.com/jonathannnleee/"
             style={{
