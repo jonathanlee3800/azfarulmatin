@@ -20,18 +20,18 @@ function Showcase() {
   useEffect(async () => {
     try {
       console.log(error, "ERROR STATE");
-      console.log(localStorage.getItem("mydata"));
+      console.log(localStorage);
       let count = 1;
       const placeholder = [];
       if (localStorage.getItem(id) === null) {
         const response = await storage.ref(id).listAll();
-        const allImages = await Promise.all(
+        const allImagesURL = await Promise.all(
           response.items.map(async (url) => {
-            console.log("fetching data");
+            console.log("fetching data",url.getDownloadURL());
             return await url.getDownloadURL();
           })
         );
-        localStorage.setItem(id, JSON.stringify(allImages));
+        localStorage.setItem(id, JSON.stringify(allImagesURL));
         setAllimages(JSON.parse(localStorage.getItem(id)));
         console.log(JSON.parse(localStorage.getItem(id)), "nullbro");
       } else {

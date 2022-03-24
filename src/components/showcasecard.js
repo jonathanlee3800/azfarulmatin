@@ -8,7 +8,6 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
-import { storage } from "../firebase";
 // Can be a string as well. Need to ensure each key-value pair ends with ;
 import Loadingspinner from "./loadingSpinner";
 
