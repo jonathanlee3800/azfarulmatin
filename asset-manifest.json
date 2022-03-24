@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/azfarulmatin/static/css/main.953c4905.chunk.css",
-    "main.js": "/azfarulmatin/static/js/main.6bc059ac.chunk.js",
-    "main.js.map": "/azfarulmatin/static/js/main.6bc059ac.chunk.js.map",
+    "main.js": "/azfarulmatin/static/js/main.aed6fbbe.chunk.js",
+    "main.js.map": "/azfarulmatin/static/js/main.aed6fbbe.chunk.js.map",
     "runtime-main.js": "/azfarulmatin/static/js/runtime-main.e3b334ee.js",
     "runtime-main.js.map": "/azfarulmatin/static/js/runtime-main.e3b334ee.js.map",
     "static/css/2.fabbef47.chunk.css": "/azfarulmatin/static/css/2.fabbef47.chunk.css",
@@ -18,6 +18,7 @@
     "static/media/cityscape.b3db9eb3.jpg": "/azfarulmatin/static/media/cityscape.b3db9eb3.jpg",
     "static/media/daily.a834317b.JPG": "/azfarulmatin/static/media/daily.a834317b.JPG",
     "static/media/exhibition.57fcac9a.jpg": "/azfarulmatin/static/media/exhibition.57fcac9a.jpg",
+    "static/media/food.7a3b1236.jpg": "/azfarulmatin/static/media/food.7a3b1236.jpg",
     "static/media/homepage.e67ad42c.jpg": "/azfarulmatin/static/media/homepage.e67ad42c.jpg",
     "static/media/portrait.6b823aee.jpg": "/azfarulmatin/static/media/portrait.6b823aee.jpg",
     "static/media/sports.41e14715.jpg": "/azfarulmatin/static/media/sports.41e14715.jpg"
@@ -27,6 +28,6 @@
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.08794c62.chunk.js",
     "static/css/main.953c4905.chunk.css",
-    "static/js/main.6bc059ac.chunk.js"
+    "static/js/main.aed6fbbe.chunk.js"
   ]
 }
